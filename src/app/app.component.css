@@ -1,0 +1,28 @@
+#searchBox {
+    width: 400px;
+}
+
+#type {
+    border-radius: 0px;
+}
+.card:hover {
+    top: -10px;
+}
+
+div.card {
+    top: 0px;
+    background: linear-gradient(-45deg,#bbbbbb,lightgray);
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 2px 4px 10px grey;
+    -webkit-transition: top .5s; /* For Safari 3.1 to 6.0 */
+    transition: top ease-in-out .5s;
+}
+
+div img.card-img-top {
+
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px grey;
+    object-fit: contain;
+}
