@@ -27,11 +27,12 @@ export class AppComponent {
     
       this.movie = data;
       this.totals = [];
-      for (let i = 0; i <= 9 && i < this.movie.totalResults / 10; i++) {
-        this.totals.push("");
-      }
+      // for (let i = 0; i <= 9 && i < this.movie.totalResults / 10; i++) {
+      //   this.totals.push("");
+      // }
     });
     setInterval(function(){ this.animate = !this.animate; }, 1000);
+    console.log(this.movie)
   }
 
 
