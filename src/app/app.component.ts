@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { fadeAnimation, routerTransition } from './animation'
 
 @Component({
@@ -10,7 +9,7 @@ import { fadeAnimation, routerTransition } from './animation'
   animations: [fadeAnimation, routerTransition]
 })
 export class AppComponent {
-  movie =  {};
+  movie: any;
   totals = [];
   movieInfo = {};
   animate = true;
@@ -25,7 +24,7 @@ export class AppComponent {
     box != undefined ? box = box + '&page=' + p + '&type=' + type : null;
     let get = "http://www.omdbapi.com/?apikey=5140c43a&s=" + box;
     this.http.get(get).subscribe((data) => {
-      this.movie = {};
+    
       this.movie = data;
       this.totals = [];
       for (let i = 0; i <= 9 && i < this.movie.totalResults / 10; i++) {
