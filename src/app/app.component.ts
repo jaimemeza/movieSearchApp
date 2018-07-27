@@ -11,7 +11,7 @@ import { fadeAnimation, routerTransition } from './animation'
 export class AppComponent {
   movie: any;
   totals = [];
-  movieInfo = {};
+  movieInfo: any;
   animate = true;
 
   constructor(public http: HttpClient) {
