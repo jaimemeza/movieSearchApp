@@ -22,14 +22,14 @@ export class AppComponent {
     let type = (<HTMLInputElement>document.getElementById('type')).value;
     let box = (<HTMLInputElement>document.getElementById("searchBox")).value;
     box != undefined ? box = box + '&page=' + p + '&type=' + type : null;
-    let get = "http://www.omdbapi.com/?apikey=5140c43a&s=" + box;
+    let get = "https://www.omdbapi.com/?apikey=5140c43a&s=" + box;
     this.http.get(get).subscribe((data) => {
     
       this.movie = data;
       this.totals = [];
-      // for (let i = 0; i <= 9 && i < this.movie.totalResults / 10; i++) {
-      //   this.totals.push("");
-      // }
+      for (let i = 0; i <= 9 && i < this.movie.totalResults / 10; i++) {
+        this.totals.push("");
+      }
     });
     setInterval(function(){ this.animate = !this.animate; }, 1000);
     console.log(this.movie)
