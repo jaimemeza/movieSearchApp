@@ -10,7 +10,7 @@ import { fadeAnimation, routerTransition } from './animation'
   animations: [fadeAnimation, routerTransition]
 })
 export class AppComponent {
-  movie: any;
+  movie =  {};
   totals = [];
   movieInfo = {};
   animate = true;
