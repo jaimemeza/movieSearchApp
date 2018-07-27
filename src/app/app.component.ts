@@ -24,7 +24,6 @@ export class AppComponent {
     box != undefined ? box = box + '&page=' + p + '&type=' + type : null;
     let get = "https://www.omdbapi.com/?apikey=5140c43a&s=" + box;
     this.http.get(get).subscribe((data) => {
-    
       this.movie = data;
       this.totals = [];
       for (let i = 0; i <= 9 && i < this.movie.totalResults / 10; i++) {
@@ -32,16 +31,14 @@ export class AppComponent {
       }
     });
     setInterval(function(){ this.animate = !this.animate; }, 1000);
-    console.log(this.movie)
   }
 
 
   getMoreInfo(imdbID) {
     imdbID != undefined ? imdbID = '&i=' + imdbID : null;
-    let get = "http://www.omdbapi.com/?apikey=5140c43a&" + imdbID;
+    let get = "https://www.omdbapi.com/?apikey=5140c43a&" + imdbID;
     this.http.get(get).subscribe((data) => {
       this.movieInfo = data;
-      console.log(this.movieInfo);
       setInterval(function(){ this.animate = !this.animate; }, 1000);
     });
   }
